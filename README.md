@@ -12,20 +12,14 @@ Before using this model, please make sure read the introduction on our website (
 ### Installation
 1. Clone the repo
 ```bash
-git clone https://github.com/shengminz/MAPSHB.git
+git clone https://github.com/shengminz/MAPSHB_Ligand.git
 ```
-2. Install AmberTools23  
-```bash
-conda create --name AmberTools23
-conda activate AmberTools23
-conda install -c conda-forge ambertools=23
-```
-3. Install R
+2. Install R
 ```bash
 conda install -c r r
 conda install -c conda-forge r-gbm
 ```
-4. Install Fortran
+3. Install Fortran
 ```bash
 conda install -c conda-forge gfortran
 ```
@@ -38,8 +32,8 @@ cp /path/to/input/pdb/file input.pdb #Replace /path/to/input/pdb/file intp the p
 ```
 2. Prediction
 ```bash
-chmod +x run_mapshb
-./run_mapshb
+chmod +x run_mapshb_ligand
+./run_mapshb_ligand
 ```
 3. Output file
 
