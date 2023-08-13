@@ -19,9 +19,9 @@ git clone https://github.com/shengminz/MAPSHB_Ligand.git
 conda install -c r r
 conda install -c conda-forge r-gbm
 ```
-3. Install Fortran
+3. Install python
 ```bash
-conda install -c conda-forge gfortran
+conda install -c anaconda python
 ```
 
 ### Run Prediction
