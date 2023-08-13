@@ -35,7 +35,7 @@ Fill out the file named "info_hb", and type the values after ":"
 3. Prediction
 ```bash
 python prepare.py
-./run_mapshb_ligand
+Rscript MAPSHB_ligand.r
 ```
 3. Output file
 
