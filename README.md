@@ -31,12 +31,13 @@ cd /path/to/MAPSHB #Replace /path/to/MAPSHB into the path of the working directo
 cp /path/to/input/pdb/file input.pdb #Replace /path/to/input/pdb/file intp the path of the input PDB file
 ```
 2. Provide the basic information about hydrogen bonds
+
 Fill out the file named "info_hb", and type the values after ":"
 3. Prediction
 ```bash
 python prepare.py
 Rscript MAPSHB_ligand.r
 ```
-3. Output file
+4. Output file
 
 File "predict_result.csv" is the output file.
