@@ -30,9 +30,11 @@ conda install -c anaconda python
 cd /path/to/MAPSHB #Replace /path/to/MAPSHB into the path of the working directory "MAPSHB"
 cp /path/to/input/pdb/file input.pdb #Replace /path/to/input/pdb/file intp the path of the input PDB file
 ```
-2. Prediction
+2. Provide the basic information about hydrogen bonds
+Fill out the file named "info_hb", and type the values after ":"
+3. Prediction
 ```bash
-chmod +x run_mapshb_ligand
+python prepare.py
 ./run_mapshb_ligand
 ```
 3. Output file
