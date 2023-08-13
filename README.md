@@ -33,6 +33,7 @@ cp /path/to/input/pdb/file input.pdb #Replace /path/to/input/pdb/file intp the p
 2. Provide the basic information about hydrogen bonds
 
 Fill out the file named "info_hb", and type the values after ":"
+
 3. Prediction
 ```bash
 python prepare.py
