@@ -157,22 +157,21 @@ for index in range(len(atom_num)):
       atom_aa.append('N')
       chrg_aa.append(1)
 
-output = open('temp', 'w')
 distances = []
 count = 0
 dist_min = 999.9
 n_min = -1
-for index in range(len(atom)):
-  coord_aa = [x[atom[index]], y[atom[index]], z[atom[index]]]
-  coord_aa = np.array(coord_aa)
-  distance = np.linalg.norm(coord_lig - coord_aa)
-  distances.append(distance)
-  if distance <= 3.2:
-    output.write("{:3} {:1} {:4} {:2d} {:2d} {:3} {:3} {:3} {:3} {:3} {:3} {:6.2f} {:6.2f} {:6.2f} {:1} {:4d} {:3} {:4} {:4d} {:6.4f}\n".format(res_aa, atom_aa[index], ligand, chrg_aa[index], chrg_ligand, res_aa_n3, res_aa_n2, res_aa_n1, res_aa_1, res_aa_2, res_aa_3, pKa, pKb, logP, atom_aa[index], res_num, lig_name, atom_ligand, lig_num, distance))
-    count += 1
-  if distance <= dist_min:
-    dist_min = distance
-    n_min = index
-print(count)
-if count == 0:
-  output.write("{:3} {:1} {:4} {:2d} {:2d} {:3} {:3} {:3} {:3} {:3} {:3} {:6.2f} {:6.2f} {:6.2f} {:1} {:4d} {:3} {:4} {:4d} {:6.4f}\n".format(res_aa, atom_aa[n_min], ligand, chrg_aa[n_min], chrg_ligand, res_aa_n3, res_aa_n2, res_aa_n1, res_aa_1, res_aa_2, res_aa_3, pKa, pKb, logP, atom_aa[n_min], res_num, lig_name, atom_ligand, lig_num, distance))
+with open('temp', 'w') as output:
+    for index in range(len(atom)):
+        coord_aa = [x[atom[index]], y[atom[index]], z[atom[index]]]
+        coord_aa = np.array(coord_aa)
+        distance = np.linalg.norm(coord_lig - coord_aa)
+        distances.append(distance)
+        if distance <= 3.2:
+            output.write("{:3} {:1} {:4} {:2d} {:2d} {:3} {:3} {:3} {:3} {:3} {:3} {:6.2f} {:6.2f} {:6.2f} {:1} {:4d} {:3} {:4} {:4d} {:6.4f}\n".format(res_aa, atom_aa[index], ligand, chrg_aa[index], chrg_ligand, res_aa_n3, res_aa_n2, res_aa_n1, res_aa_1, res_aa_2, res_aa_3, pKa, pKb, logP, atom_aa[index], res_num, lig_name, atom_ligand, lig_num, distance))
+            count += 1
+        if distance <= dist_min:
+            dist_min = distance
+            n_min = index
+    if count == 0:
+       output.write("{:3} {:1} {:4} {:2d} {:2d} {:3} {:3} {:3} {:3} {:3} {:3} {:6.2f} {:6.2f} {:6.2f} {:1} {:4d} {:3} {:4} {:4d} {:6.4f}\n".format(res_aa, atom_aa[n_min], ligand, chrg_aa[n_min], chrg_ligand, res_aa_n3, res_aa_n2, res_aa_n1, res_aa_1, res_aa_2, res_aa_3, pKa, pKb, logP, atom_aa[n_min], res_num, lig_name, atom_ligand, lig_num, distance))
